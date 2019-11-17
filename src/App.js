@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import Footer from './containers/footer.js';
-import Header from './containers/header.js';
 import './App.css';
 import 'react-bootstrap';
+import SearchResults from './containers/SearchResult.js'
 
 class App extends Component {
       constructor(props) {
-        super(props) 
+        super(props)
       }
   render() {
     return (
       <div className="App">
-        <Header />
-        <Footer />
+        <h1>Search Result Selection</h1>
+        <SearchResults />
       </div>
     );
   }
