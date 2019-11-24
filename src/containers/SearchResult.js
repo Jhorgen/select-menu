@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { container } from reactstrap
+import { Container } from "reactstrap";
 
 const stuff = ["one", "two", "three"];
 
@@ -11,22 +11,23 @@ class SearchResults extends React.Component {
       selected: null,
       showing: true,
       showAll: true,
-      test: false
+      test: false,
+      active: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(val, showing, test) {
+  handleClick(val, showing, test, key) {
       this.setState({ showing: !showing })
       this.setState({ test: !test })
       this.setState({ selected: val})
   }
 
-  getStuff(showing) {
+  getStuff() {
     var results = stuff.map((value, key) => {
       return (
         <li className="test" key={key} onClick={() => this.handleClick(value)}>
-          <h3 className="list-items">{value}</h3>
+          <h3 className={this.state.active ? 'selected': null}>{value}</h3>
         </li>
       );
     });
@@ -38,7 +39,9 @@ class SearchResults extends React.Component {
     const { showAll } = this.state;
     const { test } = this.state;
     return(
-      <div class="container">
+      <div class="Container search-page">
+        <div class="row d-flex justify-content-center text-center mt-4">
+        <div class="col-12">
 
        { showing
          ? <div><ul>{this.getStuff()}</ul></div>
@@ -46,7 +49,7 @@ class SearchResults extends React.Component {
        }
 
        { test
-         ? <button onClick={() => this.setState({ showing: !showing, showAll: !showAll, test: !test })}>Select</button>
+         ? <button class="btn-info btn btn-block" onClick={() => this.setState({ showing: !showing, showAll: !showAll, test: !test })}>Select</button>
          : null
        }
 
@@ -57,10 +60,12 @@ class SearchResults extends React.Component {
 
       { showAll
         ? null
-        : <button onClick={() => this.setState({ showing: !showing, showAll: !showAll })}>Go Back</button>
+        : <button class="btn btn-info btn-block" onClick={() => this.setState({ showing: !showing, showAll: !showAll })}>Go Back</button>
       }
 
-     </div>
+    </div>
+    </div>
+   </div>
   )
  }
 }

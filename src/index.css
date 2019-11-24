@@ -24,3 +24,7 @@ code {
 .test:hover {
 background: blue;
 }
+
+.selected {
+  background: lightblue;
+}
