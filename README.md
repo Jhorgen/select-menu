@@ -1,6 +1,6 @@
-# Project Title
+# Select Menu
 
-One Paragraph of project description goes here
+This is a piece of the code that I'm working on, my plan is to implement it into another project once it's completed. A user will be able to select one item from a list and "select" that item before moving onto the next prompt and/or render.
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+test
 ```
 
 ### Installing
