@@ -14,14 +14,15 @@ What things you need to install the software and how to install them
 test
 ```
 
-### Installing
+### Setup
 
-A step by step series of examples that tell you how to get a development env running
+To run this project, install it locally using npm.
 
-Say what the step will be
 
 ```
-Give the example
+$cd select-menu
+$npm i
+$npm start
 ```
 
 And repeat
